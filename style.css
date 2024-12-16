@@ -1,0 +1,245 @@
+/* General formatting */
+body {
+	padding: 0 10px;
+	font: 18px/1.5 -apple-system, BlinkMacSystemFont, "avenir next", avenir, "Segoe UI", "lucida grande", "helvetica neue", helvetica, "Fira Sans", roboto, noto, "Droid Sans", cantarell, oxygen, ubuntu, "franklin gothic medium", "century gothic", "Liberation Sans",
+		sans-serif;
+}
+
+h1,
+h2,
+h3 {
+	line-height: 1.2
+}
+
+
+
+/* Your text should be in a nice narrow column */
+.content-column {
+	max-width: 900px;
+	margin: 40px auto;
+}
+/* Set a container with a responsive aspect ratio */
+.iframe-container {
+	position: relative;
+	width: 100%; /* Full width of the parent element */
+	height: 850px;
+	overflow: auto;
+	border: #ccc 1px solid;
+	border-radius: 5px;
+	margin: 0 auto;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	background-color: #f9f9f9;
+	margin-bottom: 20px;
+}
+
+/* Style the iframe to fit the container */
+.responsive-iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border: none; /* Removes iframe border */
+	transform: scale(1.3); 
+    transform-origin: 25% 30%; /* Zoom from the top-left corner */
+	
+}
+
+#vis-container {
+	width: 100%;
+	/* Full width of the screen */
+	height: 75%;
+	display: flex;
+	/* Use flexbox for layout */
+	flex-direction: row;
+	gap: 20px;
+	/* Space between child elements */
+	flex-wrap: wrap;
+	/* Allow items to wrap to the next line if needed */
+}
+
+
+
+#map-container {
+	flex: 0 0 700px;
+	height: 100%;
+	margin-left:10%
+}
+
+#stacked-container {
+	flex: 1;
+}
+
+#stacked-bar-chart {
+	position: relative;
+	margin: 20px auto;
+	text-align: center;
+	width:100%;
+	height:100%;
+	top: 135px;
+}
+#controls {
+	display: flex;
+	justify-content: center; /* Centers horizontally */
+	align-items: center; /* Centers vertically */
+	height: 2%;
+	position: relative;
+	top: 135px;
+}
+
+#ridership-chart {
+	position: relative;
+	margin: 20px auto;
+	text-align: center;
+}
+
+#button-container {
+	display: flex;
+	justify-content: center; /* Centers horizontally */
+	align-items: center; /* Centers vertically */
+	height: 2%;
+	position: relative;
+}
+
+.button{
+	background-color: #f9f9f9;
+	border: 1px solid #ccc;
+	margin: 0 5px;
+	width: 150px;
+	height: 50px;
+}
+
+#map {
+	width: 100%;
+	height: 50%;
+}
+#map-header {
+	height:2.5%;
+	text-align: center;
+}
+#selected-neighborhoods {
+	position: relative; /* Position relative to parent if needed */
+	transform: translateX(17.5%); /* Offset by half of the element's width */
+	width: 75%; /* Fixed width for the box */
+	height: 100px;  /* Fixed height for the box */
+	background-color: #ffffff;
+	padding: 10px 20px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	font-size: 20px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	overflow-y: scroll; /* Enable vertical scrolling */
+	box-sizing: border-box; /* Ensure padding doesn't increase the overall height */
+	scroll-behavior: smooth; /* Optional: Smooth scrolling */
+}
+
+svg {
+	background-color: #eef;
+}
+
+.neighborhood {
+	fill: #ffffff;
+	stroke: #333;
+	stroke-width: 0.5px;
+	transition: fill 0.3s ease;
+}
+
+.neighborhood.highlighted {
+	fill: #ff6347;
+	/* A reddish color to highlight */
+	stroke: #000000;
+	stroke-width: 2;
+}
+
+#neighborhood-name {
+	position: relative;
+	top: -10px;
+	left: 50%;
+	transform: translateX(-50%);
+	/* Centers the div horizontally */
+	font-size: 16px;
+	font-weight: bold;
+	padding: 5px 10px;
+	/* Adjust padding for spacing around the text */
+	border-radius: 5px;
+	z-index: 10;
+	text-align: center;
+	/* Centers the text inside the div */
+	white-space: nowrap;
+	/* Prevents text from wrapping to a new line */
+}
+
+.tooltip {
+	position: relative;
+	background: white;
+	border: 1px solid #ddd;
+	padding: 5px;
+	font-size: 12px;
+	pointer-events: none;
+}
+
+
+/* Fork on GitHub ribbon via https://codepo8.github.io/css-fork-on-github-ribbon/# */
+#forkongithub a {
+	background: #00F;
+	color: #fff;
+	text-decoration: none;
+	font-family: arial, sans-serif;
+	text-align: center;
+	font-weight: bold;
+	padding: 5px 40px;
+	font-size: 1rem;
+	line-height: 1.4rem;
+	position: relative;
+	transition: 0.5s;
+}
+
+#forkongithub a:hover {
+	background: #118;
+	color: #fff;
+}
+
+#forkongithub a::before,
+#forkongithub a::after {
+	content: "";
+	width: 100%;
+	display: block;
+	position: absolute;
+	top: 1px;
+	left: 0;
+	height: 1px;
+	background: #fff;
+}
+
+#forkongithub a::after {
+	bottom: 1px;
+	top: auto;
+}
+
+@media screen and (min-width:1000px) {
+	#forkongithub {
+		position: fixed;
+		display: block;
+		top: 0;
+		right: 0;
+		width: 200px;
+		overflow: hidden;
+		height: 200px;
+		z-index: 9999;
+	}
+
+	#forkongithub a {
+		width: 200px;
+		position: absolute;
+		top: 60px;
+		right: -60px;
+		transform: rotate(45deg);
+		-webkit-transform: rotate(45deg);
+		-ms-transform: rotate(45deg);
+		-moz-transform: rotate(45deg);
+		-o-transform: rotate(45deg);
+		box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8);
+	}
+
+
+}
